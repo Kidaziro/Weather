@@ -2,13 +2,10 @@
 import React, { useState } from "react";
 import Card from "./Card";
 
-
-import Menu from "./menu";
+import Menu from "./Menu";
 import { darkb, rainb } from "../assets";
 
 
-import { rainb } from "../assets";
-import Menu from "./Menu";
 
 const Home = () => {
 
