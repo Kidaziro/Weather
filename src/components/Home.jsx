@@ -3,7 +3,7 @@ import React, { useState } from "react";
 
 import Card from "./Card";
 import { rainb } from "../assets";
-import Menu from "./menu";
+import Menu from "./Menu";
 const Home = () => {
   const [lat, setLat] = useState("");
   const [lon, setLon] = useState("");
