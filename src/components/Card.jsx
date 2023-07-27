@@ -1,11 +1,12 @@
 /* eslint-disable no-unused-vars */
 // eslint-disable-next-line no-unused-vars
 import React, { useEffect, useState } from "react";
-import { rain } from "../assets";
+import { dark, rain } from "../assets";
 import PropTypes from "prop-types";
 import axios from "axios";
+import dotenv from 'react-dotenv';
 const Carde = (props) => {
-  const { lat,lon } = props;
+  const { lat,lon , img} = props;
   const today = new Date();
   const day = today.getDate();
   const month = today.getMonth() + 1; // Months start at 0!
@@ -20,6 +21,7 @@ const Carde = (props) => {
   const [country,setCountry]=useState("-");
   const [time,setTime]=useState("-");
 
+  
   const divs = [];
 
   for (let i = 0; i < 3; i++) {
@@ -59,7 +61,7 @@ const Carde = (props) => {
       className="flex justify-center z-[0]"
       id="card"
     >
-      
+      <p className="text-xl text-white">{img} </p>
       <div className="lg:w-[450px] md:w-[350px] sm:w-[250px] w-[340px] ">
         <div className="absolute mt-[15px] ml-[15px] ">
           <div id="dotes" className="flex">
@@ -104,7 +106,7 @@ const Carde = (props) => {
             </div>
           </div>
         </div>
-        <img src={rain} className="w-full lg:h-[550px] md:h-[420px] sm:h-[320px] h-[500px] rounded-[30px] " />
+        <img src={img ? rain : dark} className="w-full lg:h-[550px] md:h-[420px] sm:h-[320px] h-[500px] rounded-[30px] " />
       </div>
     </div>
   );
@@ -113,6 +115,7 @@ const Carde = (props) => {
 Carde.propTypes = {
   lat: PropTypes.oneOfType([PropTypes.string, PropTypes.number]).isRequired,
   lon: PropTypes.oneOfType([PropTypes.string, PropTypes.number]).isRequired,
+  img :PropTypes.oneOfType([PropTypes.string, PropTypes.bool]).isRequired,
   
 };
 export default Carde;
