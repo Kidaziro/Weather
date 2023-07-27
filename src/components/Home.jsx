@@ -1,15 +1,15 @@
 // eslint-disable-next-line no-unused-vars
 import React, { useState } from "react";
 import Card from "./Card";
-<<<<<<< HEAD
+
 
 import Menu from "./menu";
 import { darkb, rainb } from "../assets";
 
-=======
+
 import { rainb } from "../assets";
 import Menu from "./Menu";
->>>>>>> 6a11c6c7bb7f687ef325d0483ad48ec0cb8f456b
+
 const Home = () => {
 
   const [lat, setLat] = useState("");
